@@ -23,8 +23,9 @@
 </head>
 
 <body class="container p-4" style="max-width: 1300px;">
-    <div class="baitap1 border-dark card p-4">
-        <h3 class="bg-warning p-2 card mb-4" style="width: fit-content;">BÀI TẬP 1: QUẢN LÝ TUYỂN SINH</h3>
+    <!-- BÀI TẬP 1: QUẢN LÝ TUYỂN SINH-->
+    <div class="baitap1 border-dark card p-4 mb-4">
+        <h3 class="bg-warning p-2 card mb-2" style="width: fit-content;">BÀI TẬP 1: QUẢN LÝ TUYỂN SINH</h3>
         <h4 class=" m-auto text-center alert alert-danger">SƠ ĐỒ 3 KHỐI</h4>
         <table class="m-3">
             <thead>
@@ -93,6 +94,64 @@
         <div class="pr-5 pl-5">
             <div style="font-weight: bold;" class="aler alert-secondary mt-3 form-control w-100 text-danger ">=> <span
                     id="ketQua"></span></div>
+        </div>
+    </div>
+
+    <!-- BÀI TẬP 2: TÍNH TIỀN ĐIỆN -->
+    <div class="baitap1 border-dark card p-4 mb-4 ">
+        <h3 class="bg-warning p-2 card mb-2" style="width: fit-content;">BÀI TẬP 2: TÍNH TIỀN ĐIỆN</h3>
+        <h4 class=" m-auto text-center alert alert-danger">SƠ ĐỒ 3 KHỐI</h4>
+        <table class="m-3">
+            <thead>
+                <tr class="text-center">
+                    <th>INPUT</th>
+                    <th>PROGRESS</th>
+                    <th>OUTPUT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Họ và tên khách hàng;</li>
+                            <li>Số kW tiêu thụ;</li>
+                            <li>50kW đầu: 500đ/kW;</li>
+                            <li>50kW kế: 650đ/kW;</li>
+                            <li>100kW kế: 850đ/kW;</li>
+                            <li>150kW kế: 1100đ/kW;</li>
+                            <li>Còn lại: 1300đ/kW;</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>DOM đến button để lấy sự kiện onclick;</li>
+                            <li>Tạo biến và lấy giá trị họ tên: hoTen;</li>
+                            <li>Tạo biến và lấy giá trị số kW điện: soKW;</li>
+                            <li>Tạo biến và gán giá điện cho từng bậc thang: const giaDien_n(1-5);</li>
+                            <li>Dùng IF ELSE theo giá điện bậc thang để tính tiền điện;</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Show họ tên khách hàng;</li>
+                            <li>Show tổng tiền điện;</li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+        <div class="form-group d-flex pl-5 pr-5 w-75">
+            <input type="text" id="hoTen" class="form-control w-50 mr-5" placeholder="Nhập họ tên">
+            <input type="number" id="soKW" class="form-control w-25" placeholder="Nhập số kW">
+            <button id="btnTinhTienDien" class="btn btn-dark text w-25 ml-5">TÍNH TIỀN ĐIỆN</button>
+        </div>
+        <div class="pr-5 pl-5">
+            <div style="font-weight: bold;" class="aler alert-secondary mt-3 form-control w-100 text-danger ">=> <span
+                    id="inHoTen"></span>
+                <span id="inTienDien"></span>
+            </div>
         </div>
     </div>
 
