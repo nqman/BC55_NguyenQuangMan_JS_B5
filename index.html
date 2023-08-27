@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Title</title>
+    <title>BÀI TẬP JS BUỔI 5</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,9 +10,92 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        td,
+        th {
+            border: 1px solid black;
+        }
+
+        ul {
+            padding-right: 10px;
+        }
+    </style>
 </head>
 
-<body>
+<body class="container p-4" style="max-width: 1300px;">
+    <div class="baitap1 border-dark card p-4">
+        <h3 class="bg-warning p-2 card mb-4" style="width: fit-content;">BÀI TẬP 1: QUẢN LÝ TUYỂN SINH</h3>
+        <h4 class=" m-auto text-center alert alert-danger">SƠ ĐỒ 3 KHỐI</h4>
+        <table class="m-3">
+            <thead>
+                <tr class="text-center">
+                    <th>INPUT</th>
+                    <th>PROGRESS</th>
+                    <th>OUTPUT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Điểm chuẩn hội đồng;</li>
+                            <li>Điểm thi 3 môn;</li>
+                            <li>Khu vực: A, B, C;</li>
+                            <li>Đối tượng: 1, 2, 3;</li>
+                            <li>Không có môn nào điểm 0;</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>DOM đến button để lấy sự kiện onclick;</li>
+                            <li>Tạo biến và lấy giá trị điểm chuẩn: diemChuan;</li>
+                            <li>Tạo biến và lấy giá trị điểm môn thứ 1: diemMon_1;</li>
+                            <li>Tạo biến và lấy giá trị điểm môn thứ 2: diemMon_2;</li>
+                            <li>Tạo biến và lấy giá trị điểm môn thứ 3: diemMon_3;</li>
+                            <li>Tạo biến và lấy giá trị khu vực: khuVuc;</li>
+                            <li>Tạo biến và lấy giá trị đối tượng: doiTuong;</li>
+                            <li>Tạo biến tổng điểm: tongDiem = diemMon_1 + diemMon_2 + diemMon_3 + khuVuc + doiTuong;
+                            </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Kết quả đậu hoặc rớt;</li>
+                            <li>Tổng điểm đạt được;</li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="form-group d-flex pl-5 pr-5 w-100">
+            <input type="number" id="diemChuan" class="form-control w-100 mr-5" placeholder="Điểm chuẩn">
+            <select id="khuVuc" class="form-control w-100 mr-5">
+                <option value="0">Chọn khu vực</option>
+                <option value="2">A</option>
+                <option value="1">B</option>
+                <option value="0.5">C</option>
+            </select>
+            <select id="doiTuong" class="form-control w-100">
+                <option value="0">Chọn đối tượng</option>
+                <option value="2.5">1</option>
+                <option value="1.5">2</option>
+                <option value="1">3</option>
+            </select>
+        </div>
+        <div class="form-group d-flex pl-5 pr-5 w-100">
+            <input type="number" id="diemMon_1" class="form-control w-100 mr-5" placeholder="Điểm môn thứ 1">
+            <input type="number" id="diemMon_2" class="form-control w-100 mr-5" placeholder="Điểm môn thứ 2">
+            <input type="number" id="diemMon_3" class="form-control w-100" placeholder="Điểm môn thứ 3">
+        </div>
+        <button id="btnTinhDiem" class="btn btn-dark text w-25 ml-5" style="border-radius: 30px; max-width: 150px;">KẾT
+            QUẢ</button>
+        <div class="pr-5 pl-5">
+            <div style="font-weight: bold;" class="aler alert-secondary mt-3 form-control w-100 text-danger ">=> <span
+                    id="ketQua"></span></div>
+        </div>
+    </div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
