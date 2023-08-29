@@ -24,7 +24,7 @@
 
 <body class="container p-4" style="max-width: 1300px;">
     <!-- BÀI TẬP 1: QUẢN LÝ TUYỂN SINH-->
-    <div class="baitap1 border-dark card p-4 mb-4">
+    <div class=" border-dark card p-4 mb-4">
         <h3 class="bg-warning p-2 card mb-2" style="width: fit-content;">BÀI TẬP 1: QUẢN LÝ TUYỂN SINH</h3>
         <h4 class=" m-auto text-center alert alert-danger">SƠ ĐỒ 3 KHỐI</h4>
         <table class="m-3">
@@ -98,7 +98,7 @@
     </div>
 
     <!-- BÀI TẬP 2: TÍNH TIỀN ĐIỆN -->
-    <div class="baitap1 border-dark card p-4 mb-4 ">
+    <div class=" border-dark card p-4 mb-4 ">
         <h3 class="bg-warning p-2 card mb-2" style="width: fit-content;">BÀI TẬP 2: TÍNH TIỀN ĐIỆN</h3>
         <h4 class=" m-auto text-center alert alert-danger">SƠ ĐỒ 3 KHỐI</h4>
         <table class="m-3">
@@ -151,6 +151,62 @@
             <div style="font-weight: bold;" class="aler alert-secondary mt-3 form-control w-100 text-danger ">=> <span
                     id="inHoTen"></span>
                 <span id="inTienDien"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- BÀI TẬP 3: TÍNH THUẾ THU NHẬP CÁ NHÂN -->
+    <div class=" border-dark card p-4 mb-4 ">
+        <h3 class="bg-warning p-2 card mb-2" style="width: fit-content;">BÀI TẬP 3: TÍNH THUẾ THU NHẬP CÁ NHÂN</h3>
+        <h4 class=" m-auto text-center alert alert-danger">SƠ ĐỒ 3 KHỐI</h4>
+        <table class="m-3">
+            <thead>
+                <tr class="text-center">
+                    <th>INPUT</th>
+                    <th>PROGRESS</th>
+                    <th>OUTPUT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Họ tên khách hàng;</li>
+                            <li>Tổng thu nhập năm;</li>
+                            <li>Số người phụ thuộc;</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>DOM đến button để lấy sự kiện onclick;</li>
+                            <li>Tạo biến và lấy giá trị họ tên: hoTenNopThue;</li>
+                            <li>Tạo biến và lấy giá trị tổng thu nhập năm: thuNhapNam;</li>
+                            <li>Tạo biến và lấy giá trị số người phụ thuộc: nguoiPhuThuoc;</li>
+                            <li>Tạo biến thuế thu nhập để tính tiền thuế: thueThuNhap;</li>
+                            <li>Dùng IF ELSE theo mức thu nhập chịu thuế để tính tiền thuế;</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Show họ tên khách hàng;</li>
+                            <li>Show thuế thu nhập cá nhân;</li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <img src="./img/baitap3.png" class="w-50 m-auto">
+        <div class="form-group d-flex pl-5 pr-5 w-100 mt-4">
+            <input type="text" id="hoTenNopThue" class="form-control w-50 mr-5" placeholder="Nhập họ tên">
+            <input type="number" id="thuNhapNam" class="form-control w-25 mr-5" placeholder="Tổng thu nhập năm">
+            <input type="number" id="nguoiPhuThuoc" class="form-control w-25" placeholder="Số người phụ thuộc">
+            <button id="btnTinhTienThue" class="btn btn-danger text w-25 ml-5">TÍNH TIỀN THUẾ</button>
+        </div>
+        <div class="pr-5 pl-5">
+            <div style="font-weight: bold;" class="aler alert-secondary mt-3 form-control w-100 text-danger ">=> <span
+                    id="inHoTenNopThue"></span>
+                <span id="inTienThue"></span>
             </div>
         </div>
     </div>

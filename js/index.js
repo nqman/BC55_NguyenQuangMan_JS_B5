@@ -37,9 +37,9 @@ domID("btnTinhDiem").onclick = function () {
 
 // BÀI TẬP 2: TÍNH TIỀN ĐIỆN
 
-document.getElementById("btnTinhTienDien").onclick = function () {
-  var hoTen = document.getElementById("hoTen").value;
-  var soKW = document.getElementById("soKW").value * 1;
+domID("btnTinhTienDien").onclick = function () {
+  var hoTen = domID("hoTen").value;
+  var soKW = domID("soKW").value * 1;
   const giaDien_1 = 500;
   const giaDien_2 = 650;
   const giaDien_3 = 850;
@@ -78,7 +78,41 @@ document.getElementById("btnTinhTienDien").onclick = function () {
 
 // FUNCTION IN HỌ TÊN VS SỐ TIỀN ĐIỆN
 function xuatThongTin(hoTen, tongTienDien) {
-  document.getElementById("inHoTen").innerHTML = "Họ và tên: " + hoTen + ".";
-  document.getElementById("inTienDien").innerHTML =
+  domID("inHoTen").innerHTML = "Họ và tên: " + hoTen + ".";
+  domID("inTienDien").innerHTML =
     " Tiền điện: " + tongTienDien.toLocaleString() + " VND.";
+}
+
+// BÀI TẬP 3: TÍNH THUẾ THU NHẬP CÁ NHÂN
+domID("btnTinhTienThue").onclick = function () {
+  var hoTenNopThue = domID("hoTenNopThue").value;
+  var thuNhapNam = domID("thuNhapNam").value * 1;
+  var nguoiPhuThuoc = domID("nguoiPhuThuoc").value * 1;
+  var thueThuNhap = 0;
+  if (thuNhapNam <= 0) {
+    alert("Số tiền thu nhập không hợp lệ");
+  } else if (thuNhapNam <= 60e6) {
+    thueThuNhap = (5 / 100) * (thuNhapNam - 4e6 - nguoiPhuThuoc * 16e5);
+    alert(thueThuNhap);
+  } else if (60e6 < thuNhapNam && thuNhapNam <= 120e6) {
+    thueThuNhap = (10 / 100) * (thuNhapNam - 4e6 - nguoiPhuThuoc * 16e5);
+  } else if (120e6 < thuNhapNam && thuNhapNam <= 210e6) {
+    thueThuNhap = (15 / 100) * (thuNhapNam - 4e6 - nguoiPhuThuoc * 16e5);
+  } else if (210e6 < thuNhapNam && thuNhapNam <= 384e6) {
+    thueThuNhap = (20 / 100) * (thuNhapNam - 4e6 - nguoiPhuThuoc * 16e5);
+  } else if (384e6 < thuNhapNam && thuNhapNam <= 624e6) {
+    thueThuNhap = (25 / 100) * (thuNhapNam - 4e6 - nguoiPhuThuoc * 16e5);
+  } else if (624e6 < thuNhapNam && thuNhapNam <= 960e6) {
+    thueThuNhap = (30 / 100) * (thuNhapNam - 4e6 - nguoiPhuThuoc * 16e5);
+  } else if (thuNhapNam > 960e6) {
+    thueThuNhap = (35 / 100) * (thuNhapNam - 4e6 - nguoiPhuThuoc * 16e5);
+  }
+  xuatThongTinThue(hoTenNopThue, thueThuNhap);
+};
+
+// FUNCTION IN HỌ TÊN VS TIỀN THUẾ THU NHẬP CÁ NHÂN
+function xuatThongTinThue(hoTenNopThue, thueThuNhap) {
+  domID("inHoTenNopThue").innerHTML = "Họ và tên: " + hoTenNopThue + ".";
+  domID("inTienThue").innerHTML =
+    " Tiền thuế thu nhập cá nhân: " + thueThuNhap.toLocaleString() + " VND";
 }
