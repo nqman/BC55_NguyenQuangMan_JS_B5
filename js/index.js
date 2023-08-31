@@ -93,7 +93,6 @@ domID("btnTinhTienThue").onclick = function () {
     alert("Số tiền thu nhập không hợp lệ");
   } else if (thuNhapNam <= 60e6) {
     thueThuNhap = (5 / 100) * (thuNhapNam - 4e6 - nguoiPhuThuoc * 16e5);
-    alert(thueThuNhap);
   } else if (60e6 < thuNhapNam && thuNhapNam <= 120e6) {
     thueThuNhap = (10 / 100) * (thuNhapNam - 4e6 - nguoiPhuThuoc * 16e5);
   } else if (120e6 < thuNhapNam && thuNhapNam <= 210e6) {
