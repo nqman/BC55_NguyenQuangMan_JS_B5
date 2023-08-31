@@ -127,8 +127,9 @@
                             <li>DOM đến button để lấy sự kiện onclick;</li>
                             <li>Tạo biến và lấy giá trị họ tên: hoTen;</li>
                             <li>Tạo biến và lấy giá trị số kW điện: soKW;</li>
-                            <li>Tạo biến và gán giá điện cho từng bậc thang: const giaDien_n(1-5);</li>
+                            <li>Tạo biến và gán giá điện cho từng bậc thang: const GIADIEN_n(1-5);</li>
                             <li>Dùng IF ELSE theo giá điện bậc thang để tính tiền điện;</li>
+                            <li>Tiền điện = soKW * GIADIEN_n;</li>
                         </ul>
                     </td>
                     <td>
@@ -184,6 +185,7 @@
                             <li>Tạo biến và lấy giá trị số người phụ thuộc: nguoiPhuThuoc;</li>
                             <li>Tạo biến thuế thu nhập để tính tiền thuế: thueThuNhap;</li>
                             <li>Dùng IF ELSE theo mức thu nhập chịu thuế để tính tiền thuế;</li>
+                            <li>Thu nhập chịu thuế = thuNhapNam - 4tr - nguoiPhuThuoc*1.6tr ;</li>
                         </ul>
                     </td>
                     <td>
@@ -207,6 +209,66 @@
             <div style="font-weight: bold;" class="aler alert-secondary mt-3 form-control w-100 text-danger ">=> <span
                     id="inHoTenNopThue"></span>
                 <span id="inTienThue"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- BÀI TẬP 4: TÍNH TIỀN CÁP -->
+    <div class=" border-dark card p-4 mb-4 ">
+        <h3 class="bg-warning p-2 card mb-2" style="width: fit-content;">BÀI TẬP 4: TÍNH TIỀN CÁP</h3>
+        <h4 class=" m-auto text-center alert alert-danger">SƠ ĐỒ 3 KHỐI</h4>
+        <table class="m-3">
+            <thead>
+                <tr class="text-center">
+                    <th>INPUT</th>
+                    <th>PROGRESS</th>
+                    <th>OUTPUT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Loại khách hàng;</li>
+                            <li>Mã khách hàng;</li>
+                            <li>Số kết nối(dành cho doanh nghiệp);</li>
+                            <li>Số kênh cao cấp;</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>DOM đến button để lấy sự kiện onclick;</li>
+                            <li>Tạo biến và lấy giá trị loại khách hàng: loaiKhachHang;</li>
+                            <li>Tạo biến và lấy giá trị mã khách hàng: maKhachHang;</li>
+                            <li>Tạo biến và lấy giá trị số kết nối (dành cho doanh nghiệp): soKetNoi;</li>
+                            <li>Tạo biến và lấy giá trị số kênh cao cấp: soKenhCaoCap;</li>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <li>Show mã khách hàng;</li>
+                            <li>Show tổng tiền cáp;</li>
+                        </ul>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="form-group d-flex pl-5 pr-5 w-100 mt-4">
+            <select name="KhachHang" id="loaiKhachHang" class="form-control w-50 mr-5" onchange="hienSoKetNoi()">
+                <option value="">Chọn loại khách hàng</option>
+                <option value="nhaDan">Nhà dân</option>
+                <option value="doanhNghiep">Doanh nghiệp</option>
+            </select>
+            <input type="text" id="maKhachHang" class="form-control w-25 mr-5" placeholder="Nhập mã khách hàng">
+            <input type="number" id="soKenhCaoCap" class="form-control w-25" placeholder="Số kênh cao cấp">
+        </div>
+        <input type="number" id="soKetNoi" class="form-control ml-5 mb-3 w-25 d-none" ; placeholder="Số kết nối">
+        <button id="btnTinhTienCap" class="btn btn-danger text w-25 ml-5">TÍNH TIỀN CÁP</button>
+        <div class="pr-5 pl-5">
+            <div style="font-weight: bold;" class="aler alert-secondary mt-3 form-control w-100 text-danger ">=> <span
+                    id="inMaKhachHang"></span>
+                <span id="inTienCap"></span>
             </div>
         </div>
     </div>

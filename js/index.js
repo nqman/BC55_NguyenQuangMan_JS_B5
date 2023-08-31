@@ -40,37 +40,37 @@ domID("btnTinhDiem").onclick = function () {
 domID("btnTinhTienDien").onclick = function () {
   var hoTen = domID("hoTen").value;
   var soKW = domID("soKW").value * 1;
-  const giaDien_1 = 500;
-  const giaDien_2 = 650;
-  const giaDien_3 = 850;
-  const giaDien_4 = 1100;
-  const giaDien_5 = 1300;
+  const GIADIEN_1 = 500;
+  const GIADIEN_2 = 650;
+  const GIADIEN_3 = 850;
+  const GIADIEN_4 = 1100;
+  const GIADIEN_5 = 1300;
   if (soKW < 0) {
     alert("Số kW không hợp lệ. Vui lòng nhập số kW lớn hơn 0.");
   } else if (0 <= soKW && soKW <= 50) {
-    var tienDien1 = soKW * giaDien_1;
+    var tienDien1 = soKW * GIADIEN_1;
     tongTienDien = tienDien1;
   } else if (50 < soKW && soKW <= 100) {
-    var tienDien1 = 50 * giaDien_1;
-    var tienDien2 = (soKW - 50) * giaDien_2;
+    var tienDien1 = 50 * GIADIEN_1;
+    var tienDien2 = (soKW - 50) * GIADIEN_2;
     tongTienDien = tienDien1 + tienDien2;
   } else if (100 < soKW && soKW <= 200) {
-    var tienDien1 = 50 * giaDien_1;
-    var tienDien2 = 50 * giaDien_2;
-    var tienDien3 = (soKW - 100) * giaDien_3;
+    var tienDien1 = 50 * GIADIEN_1;
+    var tienDien2 = 50 * GIADIEN_2;
+    var tienDien3 = (soKW - 100) * GIADIEN_3;
     tongTienDien = tienDien1 + tienDien2 + tienDien3;
   } else if (200 < soKW && soKW <= 350) {
-    var tienDien1 = 50 * giaDien_1;
-    var tienDien2 = 50 * giaDien_2;
-    var tienDien3 = 100 * giaDien_3;
-    var tienDien4 = (soKW - 200) * giaDien_4;
+    var tienDien1 = 50 * GIADIEN_1;
+    var tienDien2 = 50 * GIADIEN_2;
+    var tienDien3 = 100 * GIADIEN_3;
+    var tienDien4 = (soKW - 200) * GIADIEN_4;
     tongTienDien = tienDien1 + tienDien2 + tienDien3 + tienDien4;
   } else {
-    var tienDien1 = 50 * giaDien_1;
-    var tienDien2 = 50 * giaDien_2;
-    var tienDien3 = 100 * giaDien_3;
-    var tienDien4 = 150 * giaDien_4;
-    var tienDien5 = (soKW - 350) * giaDien_5;
+    var tienDien1 = 50 * GIADIEN_1;
+    var tienDien2 = 50 * GIADIEN_2;
+    var tienDien3 = 100 * GIADIEN_3;
+    var tienDien4 = 150 * GIADIEN_4;
+    var tienDien5 = (soKW - 350) * GIADIEN_5;
     tongTienDien = tienDien1 + tienDien2 + tienDien3 + tienDien4 + tienDien5;
   }
   xuatThongTin(hoTen, tongTienDien);
@@ -115,4 +115,60 @@ function xuatThongTinThue(hoTenNopThue, thueThuNhap) {
   domID("inHoTenNopThue").innerHTML = "Họ và tên: " + hoTenNopThue + ".";
   domID("inTienThue").innerHTML =
     " Tiền thuế thu nhập cá nhân: " + thueThuNhap.toLocaleString() + " VND";
+}
+
+// BÀI TẬP 4: TÍNH TIỀN CÁP
+const XULI_1 = 4.5;
+const XULI_2 = 15;
+const DVCOBAN_1 = 20.5;
+const DVCOBAN_2 = 75;
+const THUEKENH_1 = 7.5;
+const THUEKENH_2 = 50;
+var tienCap = 0;
+domID("btnTinhTienCap").onclick = function () {
+  var maKhachHang = domID("maKhachHang").value;
+  var soKenhCaoCap = domID("soKenhCaoCap").value * 1;
+  var loaiKhachHang = domID("loaiKhachHang").value;
+  switch (loaiKhachHang) {
+    case "nhaDan":
+      tienCap = XULI_1 + DVCOBAN_1 + THUEKENH_1 * soKenhCaoCap;
+      xuatThongTinCap(maKhachHang, tienCap);
+      break;
+    case "doanhNghiep":
+      soKetNoi = domID("soKetNoi").value * 1;
+      if (soKetNoi < 0) {
+        alert("Vui lòng nhập đúng số kết nối");
+      } else if (soKetNoi <= 10) {
+        tienCap = XULI_2 + DVCOBAN_2 + THUEKENH_2 * soKenhCaoCap;
+      } else {
+        tienCap =
+          XULI_2 + DVCOBAN_2 + THUEKENH_2 * soKenhCaoCap + 5 * (soKetNoi - 10);
+      }
+      xuatThongTinCap(maKhachHang, tienCap);
+      break;
+    default:
+      alert("Vui lòng chọn loại khách hàng");
+      break;
+  }
+};
+
+// FUNCTION IN MÃ KHÁCH HÀNG VS TIỀN CÁP
+function xuatThongTinCap(maKhachHang, tienCap) {
+  domID("inMaKhachHang").innerHTML = "Mã khách hàng: " + maKhachHang + ".";
+  domID("inTienCap").innerHTML =
+    " Tiền cáp: " + tienCap.toLocaleString() + " $";
+}
+
+// function VISIBLE Số kết nối
+function hienSoKetNoi() {
+  var soKetNoi = domID("soKetNoi");
+  var loaiKhachHang = domID("loaiKhachHang").value;
+  switch (loaiKhachHang) {
+    case "doanhNghiep":
+      soKetNoi.classList.remove("d-none");
+      break;
+    default:
+      soKetNoi.classList.add("d-none");
+      break;
+  }
 }
